@@ -1,0 +1,39 @@
+mutation CreateUser @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  user_insert(data: {
+    username: "demouser",
+    email: "demo@example.com",
+    passwordHash: "securepasswordhash",
+    createdAt_expr: "request.time"
+  })
+}
+
+query ListPosts @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  posts {
+    id
+    content
+    createdAt
+    user {
+      id
+      username
+    }
+    likes_on_post {
+      userId
+    }
+  }
+}
+
+mutation LikePost($postId: UUID!) @auth(level: USER) {
+  like_insert(data: {
+    postId: $postId,
+    userId_expr: "auth.uid",
+    createdAt_expr: "request.time"
+  })
+}
+
+mutation CreatePost($content: String!) @auth(level: USER) {
+  post_insert(data: {
+    content: $content,
+    userId_expr: "auth.uid",
+    createdAt_expr: "request.time"
+  })
+}

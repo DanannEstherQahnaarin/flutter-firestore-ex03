@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "194451123854",
+    "project_id": "flutter-flutterfire-ex03",
+    "storage_bucket": "flutter-flutterfire-ex03.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194451123854:android:5ab7a7784089f9ddac63df",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firestore_ex03"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxYGVx-C-6j18_3mLohg6Pnx1DnOqCJE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
